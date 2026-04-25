@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "target": "esnext",
+    "baseUrl": "./src",
+    "ignoreDeprecations": "6.0",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

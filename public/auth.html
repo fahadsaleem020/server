@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="icon" href="/logo.svg" />
+    <title>Authenticate</title>
+  </head>
+  <body
+    class="bg-[#050505] text-white h-screen overflow-hidden font-sans flex relative"
+  >
+    <!-- Background Container: Handles the clipping to prevent mobile scrolling -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div
+        class="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full"
+      ></div>
+    </div>
+
+    <!-- Your Layout: Stays exactly the same -->
+    <div
+      class="relative z-10 bg-[#0a0a0a] border-x-0 border-y-0 md:border md:border-white/10 p-5 md:p-10 md:rounded-3xl backdrop-blur-3xl shadow-2xl md:h-auto flex flex-col justify-center m-auto max-sm:w-full md:w-100"
+    >
+      <div class="flex flex-col gap-2 mb-10 text-center">
+        <h1
+          class="text-3xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-gray-400"
+        >
+          AUTHENTICATE<span class="text-blue-500">.</span>
+        </h1>
+        <p class="text-gray-400 text-sm font-medium">
+          Please enter your credentials to continue.
+        </p>
+      </div>
+
+      <form class="flex flex-col gap-6" id="authForm" method="POST">
+        <div class="flex flex-col gap-2">
+          <label
+            for="username"
+            class="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="w-full px-3 py-3 md:py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-gray-600 font-medium"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label
+            for="password"
+            class="text-xs font-bold uppercase tracking-widest text-gray-500 ml-1"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="w-full px-3 py-3 md:py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all placeholder:text-gray-600 font-medium"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="mt-4 w-full py-3 md:py-4 bg-white text-black font-bold tracking-wider rounded-2xl hover:bg-gray-200 transition-all active:scale-95 shadow-xl shadow-white/5"
+        >
+          Verify
+        </button>
+      </form>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/"
+          class="text-xs font-bold text-gray-500 hover:text-white transition-colors uppercase tracking-widest"
+        >
+          Back to Home
+        </a>
+      </div>
+    </div>
+    <script>
+      const currentPath = window.location.pathname;
+      // Set it as the form action
+      document.getElementById("authForm").action = currentPath;
+    </script>
+  </body>
+</html>

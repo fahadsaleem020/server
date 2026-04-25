@@ -1,0 +1,17 @@
+Throttle Menu:
+
+Light Traffic APIs: 
+50 requests per minute
+
+Moderate Traffic APIs: 
+100 requests per minute
+
+High Traffic APIs: 
+500+ requests per minute
+
+
+Tasks:
+@: Create a library comprising( ScalarDocs + guard ) 
+   These files need to be the part of the library:
+    1: docs.config.ts
+    2: guard-basic.middleware.ts

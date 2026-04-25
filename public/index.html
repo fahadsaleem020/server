@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="icon" href="/logo.svg" />
+    <title>Document</title>
+    <style>
+      .loader {
+        width: 64px;
+        height: 64px;
+        color: white;
+        position: relative;
+        background: radial-gradient(11.2px, currentColor 94%, #0000);
+      }
+
+      .loader:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background:
+          radial-gradient(10.08px at bottom right, #0000 94%, currentColor) top
+            left,
+          radial-gradient(10.08px at bottom left, #0000 94%, currentColor) top
+            right,
+          radial-gradient(10.08px at top right, #0000 94%, currentColor) bottom
+            left,
+          radial-gradient(10.08px at top left, #0000 94%, currentColor) bottom
+            right;
+        background-size: 22.4px 22.4px;
+        background-repeat: no-repeat;
+        animation: loader 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+      }
+
+      @keyframes loader {
+        33% {
+          inset: -11.2px;
+          transform: rotate(0deg);
+        }
+
+        66% {
+          inset: -11.2px;
+          transform: rotate(90deg);
+        }
+
+        100% {
+          inset: 0;
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#050505] text-white h-screen flex overflow-hidden font-sans relative"
+  >
+    <!-- Background Container: Handles the clipping to prevent mobile scrolling -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full"
+      ></div>
+    </div>
+
+    <div
+      class="z-10 flex flex-col items-center gap-8 max-sm: m-auto text-center px-6"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-linear-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"
+        ></div>
+        <div class="relative loader bg-[#0a0a0a] rounded-full p-8"></div>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <h1
+          class="text-4xl md:text-6xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-b from-white to-gray-400"
+        >
+          CORE<span class="text-blue-500">.</span>BACKEND
+        </h1>
+        <p class="text-gray-400 text-sm md:text-lg font-medium max-w-lg">
+          A high-performance backend architecture built with
+          <span class="text-white">ExpressJS</span>
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 mt-4">
+        <a
+          href="/api/docs"
+          class="px-6 py-2 md:py-4 bg-white tracking-wider text-black font-bold rounded-2xl hover:bg-gray-200 transition-all active:scale-95"
+        >
+          API Documentation
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
