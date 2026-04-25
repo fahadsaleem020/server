@@ -8,6 +8,8 @@ const schemaObject = z.object({
   CLOUDINARY_API_SECRET: z.string(),
   CLOUDINARY_CLOUD_NAME: z.string(),
   GOOGLE_CLIENT_SECRET: z.string(),
+  GOOGLE_CLIENT_EMAIL: z.string(),
+  GOOGLE_PRIVATE_KEY: z.string(),
   BETTER_AUTH_SECRET: z.string(),
   CLOUDINARY_API_KEY: z.string(),
   GOOGLE_CLIENT_ID: z.string(),
